@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bx3iv8ssrtu8o"]
+
+[ext_resource type="Script" path="res://addons/zylann.3d_basics/character/character_basic_controller.gd" id="1"]
+[ext_resource type="Script" path="res://addons/zylann.3d_basics/character/mouse_look.gd" id="2"]
+[ext_resource type="Script" path="res://addons/zylann.3d_basics/character/character.gd" id="3"]
+
+[sub_resource type="CapsuleShape3D" id="1"]
+radius = 0.3
+height = 1.45
+
+[sub_resource type="CapsuleMesh" id="2"]
+radius = 0.3
+height = 1.45
+
+[node name="Character" type="CharacterBody3D"]
+script = ExtResource("3")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.735, 0)
+shape = SubResource("1")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.735, 0)
+mesh = SubResource("2")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.21816, 0)
+
+[node name="MouseLook" type="Node" parent="."]
+script = ExtResource("2")
+
+[node name="Movement" type="Node" parent="."]
+script = ExtResource("1")
