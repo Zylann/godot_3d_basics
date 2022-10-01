@@ -3,6 +3,9 @@
 # This is a simple implementation, enough for testing and simple games.
 # If you need more specialized behavior, feel free to fork it.
 
+# TODO For some reason after porting to Godot 4 the character is often jittering vertically.
+# This didnt happen before and I'm not sure why that happens.
+
 extends CharacterBody3D
 
 const VERTICAL_CORRECTION_SPEED = PI
@@ -129,7 +132,6 @@ func _physics_process(delta : float):
 	# is_on_floor() is SO UNBELIEVABLY UNRELIABLE it harms jump responsivity
 	# so we spread it over several frames
 	_jump_cmd -= 1
-	print("pos ", global_transform.origin)
 
 
 func is_landed() -> bool:
