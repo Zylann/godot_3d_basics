@@ -1,13 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://byhsdky6fe6uw"]
+[gd_scene load_steps=24 format=3 uid="uid://byhsdky6fe6uw"]
 
 [ext_resource type="Material" uid="uid://c06w8gy4p3sa2" path="res://addons/zylann.3d_basics/testbed/grid10_material.tres" id="1"]
-[ext_resource type="PackedScene" path="res://addons/zylann.3d_basics/testbed/axes.tscn" id="2"]
-
-[sub_resource type="BoxShape3D" id="1"]
-size = Vector3(100, 2, 100)
-
-[sub_resource type="BoxMesh" id="2"]
-size = Vector3(100, 2, 100)
+[ext_resource type="PackedScene" uid="uid://dwpwm8lf1x5k0" path="res://addons/zylann.3d_basics/testbed/axes.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://b032a4ww28428" path="res://addons/zylann.3d_basics/testbed/floor_tile_10x10.tscn" id="3_2g8jf"]
+[ext_resource type="PackedScene" uid="uid://jj6aa1dqwsad" path="res://addons/zylann.3d_basics/testbed/landscape_mesh_01/landscape_tile_01.tscn" id="4_rytiw"]
+[ext_resource type="PackedScene" uid="uid://cvpypbvhj1m7f" path="res://addons/zylann.3d_basics/testbed/box_rb.tscn" id="5_tbdhd"]
 
 [sub_resource type="BoxShape3D" id="4"]
 size = Vector3(1, 2, 1)
@@ -56,6 +53,12 @@ size = Vector3(3, 4, 2)
 [sub_resource type="BoxShape3D" id="19"]
 size = Vector3(3, 4, 2)
 
+[sub_resource type="BoxMesh" id="BoxMesh_to5xv"]
+size = Vector3(2, 0.5, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_errn7"]
+size = Vector3(2, 0.5, 2)
+
 [sub_resource type="BoxMesh" id="14"]
 
 [sub_resource type="BoxShape3D" id="15"]
@@ -64,15 +67,6 @@ size = Vector3(3, 4, 2)
 
 [node name="Axes" parent="." instance=ExtResource("2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-
-[node name="Ground" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape" type="CollisionShape3D" parent="Ground"]
-shape = SubResource("1")
-
-[node name="MeshInstance" type="MeshInstance3D" parent="Ground"]
-material_override = ExtResource("1")
-mesh = SubResource("2")
 
 [node name="Box" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 2, 1.5)
@@ -144,6 +138,26 @@ mesh = SubResource("18")
 
 [node name="CollisionShape" type="CollisionShape3D" parent="Box3"]
 shape = SubResource("19")
+
+[node name="Box4" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 1.25, 1)
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Box4"]
+material_override = ExtResource("1")
+mesh = SubResource("BoxMesh_to5xv")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Box4"]
+shape = SubResource("BoxShape3D_errn7")
+
+[node name="Box5" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 1, 1)
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Box5"]
+material_override = ExtResource("1")
+mesh = SubResource("BoxMesh_to5xv")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Box5"]
+shape = SubResource("BoxShape3D_errn7")
 
 [node name="AlignedBoxes" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 10)
@@ -247,3 +261,59 @@ mesh = SubResource("14")
 
 [node name="CollisionShape" type="CollisionShape3D" parent="AlignedBoxes/Box8"]
 shape = SubResource("15")
+
+[node name="FloorTile" parent="." instance=ExtResource("3_2g8jf")]
+
+[node name="FloorTile2" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="FloorTile3" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+
+[node name="FloorTile4" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="FloorTile9" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+
+[node name="FloorTile10" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -20)
+
+[node name="FloorTile11" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -30)
+
+[node name="FloorTile12" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -40)
+
+[node name="FloorTile13" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40)
+
+[node name="FloorTile14" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -40)
+
+[node name="FloorTile15" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -40)
+
+[node name="FloorTile16" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -30)
+
+[node name="FloorTile17" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
+
+[node name="FloorTile5" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+
+[node name="FloorTile6" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20)
+
+[node name="FloorTile7" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -10)
+
+[node name="FloorTile8" parent="." instance=ExtResource("3_2g8jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="LandscapeTile01" parent="." instance=ExtResource("4_rytiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -25)
+
+[node name="BoxRB" parent="." instance=ExtResource("5_tbdhd")]
+transform = Transform3D(0.901463, 0, 0.432857, 0, 1, 0, -0.432857, 0, 0.901463, -1, 1.58014, -3)
