@@ -262,54 +262,56 @@ mesh = SubResource("14")
 [node name="CollisionShape" type="CollisionShape3D" parent="AlignedBoxes/Box8"]
 shape = SubResource("15")
 
-[node name="FloorTile" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTiles" type="Node3D" parent="."]
 
-[node name="FloorTile2" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
+
+[node name="FloorTile2" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 
-[node name="FloorTile3" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile3" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
 
-[node name="FloorTile4" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile4" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
 
-[node name="FloorTile9" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile9" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
 
-[node name="FloorTile10" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile10" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -20)
 
-[node name="FloorTile11" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile11" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -30)
 
-[node name="FloorTile12" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile12" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -40)
 
-[node name="FloorTile13" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile13" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40)
 
-[node name="FloorTile14" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile14" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -40)
 
-[node name="FloorTile15" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile15" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -40)
 
-[node name="FloorTile16" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile16" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -30)
 
-[node name="FloorTile17" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile17" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
 
-[node name="FloorTile5" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile5" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
 
-[node name="FloorTile6" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile6" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20)
 
-[node name="FloorTile7" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile7" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -10)
 
-[node name="FloorTile8" parent="." instance=ExtResource("3_2g8jf")]
+[node name="FloorTile8" parent="FloorTiles" instance=ExtResource("3_2g8jf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
 
 [node name="LandscapeTile01" parent="." instance=ExtResource("4_rytiw")]
