@@ -5,6 +5,11 @@
 extends Node
 
 
+func set_enabled(enabled: bool):
+	set_process(enabled)
+	set_process_unhandled_input(enabled)
+
+
 func _process(delta: float):
 	var motor = Vector3()
 	if Input.is_key_pressed(KEY_W):

@@ -23,6 +23,10 @@ func capture():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
+func uncapture():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		if event.pressed and Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
